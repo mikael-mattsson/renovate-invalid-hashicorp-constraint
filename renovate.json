@@ -14,5 +14,11 @@
     ":automergeMinor",
     ":automergePatch",
     ":maintainLockFilesWeekly"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "rangeStrategy": "replace"
+    }
   ]
 }
