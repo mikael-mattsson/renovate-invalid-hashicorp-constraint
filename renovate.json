@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Europe/Stockholm",
+  "schedule": [
+    "after 8am and before 5pm every weekday"
+  ],
+  "extends": [
+    "config:js-app",
+    ":disableRateLimiting",
+    ":rebaseStalePrs",
+    "npm:unpublishSafe",
+    ":automergeRequireAllStatusChecks",
+    ":automergeBranch",
+    ":automergeMinor",
+    ":automergePatch",
+    ":maintainLockFilesWeekly"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["terraform"],
+      "rangeStrategy": "replace"
+    }
+  ]
+}
